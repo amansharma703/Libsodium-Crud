@@ -13,4 +13,4 @@ const connectToMongo = () => {
 };
 
 // export connection function
-module.exports = connectToMongo;
+export default connectToMongo;
