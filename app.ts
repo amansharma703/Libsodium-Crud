@@ -15,8 +15,9 @@ require('./db/conn');
 connectToMongo();
 const port = process.env.PORT || 8000;
 
+// middleware to use req.body
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json()); // middleware to use req.body
+app.use(express.json());
 
 // available routes
 app.use('/', routes);
