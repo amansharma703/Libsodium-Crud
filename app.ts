@@ -6,7 +6,7 @@ import routes from './src/routes.ts';
 
 const app = express();
 
-dotenv.config({ path: '.env' });
+dotenv.config();
 import connectToMongo from './db/conn';
 import { ErrorHandler } from './src/middlewares/error';
 require('./db/conn');
