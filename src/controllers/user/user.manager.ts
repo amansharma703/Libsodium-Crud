@@ -33,7 +33,7 @@ export class UserManager {
         return { publicKey, privateKey };
     }
 
-    public createSignature = async (message: string, privateKey: any) => {
+    public createSignature = async (message: string, privateKey: string) => {
         await _sodium.ready;
         const sodium = _sodium;
         let uint8Array = await this.convertStrToAB(privateKey);
@@ -41,7 +41,7 @@ export class UserManager {
         return Buffer.from(signature).toString('base64');
     }
 
-    public verifyUser = async (userId: ObjectId | string, message: string, signature: any) => {
+    public verifyUser = async (userId: ObjectId | string, message: string, signature: string) => {
         const user = await this.getUserById(userId);
         if (!user) {
             throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
