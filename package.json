@@ -2,10 +2,11 @@
   "name": "lib-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.ts"
+    "build": "tsc -p .",
+    "start": "node ./build/app.js",
+    "dev": "nodemon --watch \"*.ts\" --exec \"ts-node\" ./app.ts"
   },
   "keywords": [],
   "author": "",
